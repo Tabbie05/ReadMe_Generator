@@ -16,7 +16,7 @@ function ChoosenButtons() {
       {buttonsFromChild.map((items) => (
         <button
           key={items.id}
-          onClick={() => handleChildButton(items)}
+          
           className="flex justify-between items-center border-2 w-[290px] h-10 shadow rounded ml-5 mt-2 px-3 hover:border-blue-600 transition-all duration-300 ease-in-out transform animate-fade-slide"
         >
           <div className="flex items-center text-black">
