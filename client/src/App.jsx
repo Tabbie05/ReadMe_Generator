@@ -1,8 +1,12 @@
-import Nav from './Components/Nav.jsx'
+
+import Main from './Components/Main';
+import Navbar from './Components/Navbar';
+import './index.css'
 function App () {
   return(
     <div>
-      <Nav/>
+      <Navbar />
+      <Main />
     </div>
   ) 
 }
