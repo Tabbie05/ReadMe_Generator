@@ -57,8 +57,6 @@ function AllButtons({ onSendButton }) {
             {items.name}
           </div>
           <div className="flex items-center gap-2 text-gray-600 ">
-            <TfiReload />
-            <MdDelete size={20} />
           </div>
         </button>
       ))}
