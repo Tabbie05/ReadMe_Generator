@@ -11,6 +11,10 @@ function ChoosenButtons() {
     setButtonsFromChild((prev) => [...prev, bttnObj]);
   };
 
+  const handleFromChoosen = (btnObj) => {
+    setButtonsFromChild((prev) => prev.filter((btn) => btn.id !== btnObj.id));
+  };
+
   return (
     <section className="w-84 mt-6">
       {buttonsFromChild.map((items) => (
@@ -24,7 +28,7 @@ function ChoosenButtons() {
           </div>
           <div className="flex items-center gap-2 text-gray-600">
             <TfiReload />
-            <MdDelete size={20} />
+            <MdDelete size={20} onClick={()=>handleFromChoosen(items)} />
           </div>
         </button>
       ))}

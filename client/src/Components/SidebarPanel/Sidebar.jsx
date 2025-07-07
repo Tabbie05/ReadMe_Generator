@@ -6,7 +6,7 @@ import ChoosenButtons from './ChoosenButtons';
 
 function Sidebar() {
   return (
-    <section className="h-[calc(100vh-9rem)] w-84 overflow-y-auto overflow-x-hidden mt-4 bg-white">
+    <section className="h-[calc(100vh-8rem)] w-84 overflow-y-auto overflow-x-hidden mt-4 bg-white">
       <div className="flex justify-between text-sm text-blue-600 px-4">
         <div>Sections</div>
         <div className="flex items-center gap-2">
