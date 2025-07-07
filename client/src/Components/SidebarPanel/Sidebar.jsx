@@ -15,7 +15,7 @@ function Sidebar() {
         </div>
       </div>
 
-      <p className="text-[13px] text-gray-600 ml-4 mt-1">
+      <p className="text-[13px] text-gray-600 ml-4 mt-6">
         Click on a section below to edit the contents
       </p>
 
