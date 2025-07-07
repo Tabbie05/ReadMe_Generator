@@ -6,11 +6,11 @@ import ChoosenButtons from './ChoosenButtons';
 
 function Sidebar() {
   return (
-    <section className="h-[calc(100vh-8rem)] w-84 overflow-y-auto overflow-x-hidden mt-4 bg-white">
+    <section className="h-[calc(100vh-8rem)] w-85 overflow-y-auto overflow-x-hidden mt-4 bg-white">
       <div className="flex justify-between text-sm text-blue-600 px-4">
-        <div>Sections</div>
-        <div className="flex items-center gap-2">
-          <TfiReload color="black" />
+        <div className='font-bold text-[18px]'>Sections</div>
+        <div className="flex items-center gap-2 text-[18px]">
+          <TfiReload color="black" size={15} />
           Reset
         </div>
       </div>
