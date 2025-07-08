@@ -9,6 +9,12 @@ export const sections = [
 - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)`
   },
   {
+    id: 'about-me',
+    name: 'About Me',
+    content: `## 🚀 About Me
+I'm a full stack developer...`
+  },
+  {
     id: 'api-reference',
     name: 'API Reference',
     content: `## API Reference
@@ -49,7 +55,7 @@ Any additional information goes here.`
     name: 'Authors',
     content: `## Authors
 
-- [@octokatherine](https://www.github.com/octokatherine)`
+- [@octokatherine](https://github.com/Tabbie05)`
   },
   {
     id: 'badges',
@@ -153,8 +159,8 @@ If you have any feedback, please reach out to us at fake@fake.com`
   },
   {
     id: 'github-profile-introduction',
-    name: 'GitHub Profile - Introduction',
-    content: `# Hi, I'm Katherine! 👋`
+    name: 'GitHub Profile - Intro',
+    content: `# Hi, I'm Taybaah! 👋`
   },
   {
     id: 'github-profile-links',
@@ -168,7 +174,29 @@ If you have any feedback, please reach out to us at fake@fake.com`
   {
     id: 'github-profile-others',
     name: 'GitHub Profile - Others',
-    content: `## Other Common Github Profile Sections`
+    content: `## Other Common Github Profile Sections
+
+👩‍💻 I'm currently working on...
+
+🧠 I'm currently learning...
+
+👯‍♀️ I'm looking to collaborate on...
+
+🤔 I'm looking for help with...
+
+💬 Ask me about...
+
+📫 How to reach me...
+
+😄 Pronouns...
+
+⚡️ Fun fact...`
+  },
+  {
+    id: 'github-skills',
+    name: 'GitHub Profile - Skills',
+    content: `## 🛠️ Skills
+Javascript, HTML, CSS...`
   },
   {
     id: 'license',
@@ -189,7 +217,7 @@ What did you learn while building this project? What challenges did you face and
     name: 'Logo',
     content: `## Logo
 
-Insert project logo or image here`
+![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)`
   },
   {
     id: 'optimizations',
