@@ -4,7 +4,6 @@ import { sections } from '../../Constants/App';
 
 function AllButtons({ onSendButton }) {
 
-
   const [btnsend, setbtnsend] = useState(sections);
 
   const handleSendButton = (btnObj) => {

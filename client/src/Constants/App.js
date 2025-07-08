@@ -2,171 +2,302 @@ export const sections = [
   {
     id: 'acknowledgement',
     name: 'Acknowledgement',
-    content: `## Acknowledgement\n\nThanks to everyone who contributed to this project.`
+    content: `## Acknowledgements
+
+- [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+- [Awesome README](https://github.com/matiassingers/awesome-readme)
+- [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)`
   },
   {
     id: 'api-reference',
     name: 'API Reference',
-    content: `## API Reference\n\n#### Get all items\n\`\`\`http\nGET /api/items\n\`\`\``
+    content: `## API Reference
+
+#### Get all items
+
+\`\`\`http
+GET /api/items
+\`\`\`
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| \`api_key\` | \`string\` | **Required**. Your API key |
+
+#### Get item
+
+\`\`\`http
+GET /api/items/\${id}
+\`\`\`
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| \`id\`      | \`string\` | **Required**. Id of item to fetch |
+
+#### add(num1, num2)
+
+Takes two numbers and returns the sum.`
   },
   {
     id: 'appendix',
     name: 'Appendix',
-    content: `## Appendix\n\nAdditional notes or references here.`
+    content: `## Appendix
+
+Any additional information goes here.`
   },
   {
     id: 'authors',
     name: 'Authors',
-    content: `## Authors\n\n- [@octokatherine](https://www.github.com/octokatherine)`
+    content: `## Authors
+
+- [@octokatherine](https://www.github.com/octokatherine)`
   },
   {
     id: 'badges',
     name: 'Badges',
-    content: `## Badges\n\nAdd badges from [shields.io](https://shields.io)\n\n![badge](https://img.shields.io/badge/License-MIT-blue.svg)`
+    content: `## Badges
+
+Add badges from somewhere like: [shields.io](https://shields.io/)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)`
   },
   {
     id: 'color-references',
-    name: 'Color References',
-    content: `## Color References\n\nYou can use these hex codes:\n- \`#000000\` - Black\n- \`#FFFFFF\` - White`
+    name: 'Color Reference',
+    content: `## Color Reference
+
+| Color           | Hex Code |
+| --------------- | -------- |
+| Example Color   | \`#0a192f\` ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) |
+| Example Color   | \`#f8f8f8\` ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) |
+| Example Color   | \`#00b48a\` ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) |
+| Example Color   | \`#00d1a0\` ![#00d1a0](https://via.placeholder.com/10/00d1a0?text=+) |`
   },
   {
     id: 'contributing',
     name: 'Contributing',
-    content: `## Contributing\n\nContributions are welcome! Please read the guidelines in CONTRIBUTING.md.`
+    content: `## Contributing
+
+Contributions are always welcome!
+
+See \`CONTRIBUTING.md\` for ways to get started.
+
+Please adhere to this project's code of conduct.`
   },
   {
     id: 'demo',
     name: 'Demo',
-    content: `## Demo\n\n![Demo](https://via.placeholder.com/600x400)`
+    content: `## Demo
+
+Insert gif or link to demo`
   },
   {
     id: 'deployment',
     name: 'Deployment',
-    content: `## Deployment\n\nTo deploy, run:\n\`\`\`bash\nnpm run deploy\n\`\`\``
+    content: `## Deployment
+
+To deploy this project run
+
+\`\`\`bash
+  npm run deploy
+\`\`\``
   },
   {
     id: 'documentation',
     name: 'Documentation',
-    content: `## Documentation\n\nFind full documentation at [docs.example.com](https://docs.example.com)`
+    content: `## Documentation
+
+[Documentation](https://linktodocumentation)`
   },
   {
     id: 'environment-variables',
     name: 'Environment Variables',
-    content: `## Environment Variables\n\nAdd the following to your \`.env\` file:\n\`\`\`\nAPI_KEY=your_api_key\n\`\`\``
+    content: `## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file:
+
+\`API_KEY\`
+
+\`ANOTHER_API_KEY\``
   },
   {
     id: 'faq',
     name: 'FAQ',
-    content: `## FAQ\n\n**Q:** How do I install it?\n\n**A:** Run \`npm install\`.`
+    content: `## FAQ
+
+#### Question 1
+
+Answer 1
+
+#### Question 2
+
+Answer 2`
   },
   {
     id: 'features',
     name: 'Features',
-    content: `## Features\n\n- Fast\n- Reliable\n- Customizable`
+    content: `## Features
+
+- Light/dark mode toggle
+- Live previews
+- Fullscreen mode
+- Cross platform`
   },
   {
     id: 'feedback',
     name: 'Feedback',
-    content: `## Feedback\n\nSend feedback to [email@example.com](mailto:email@example.com)`
-  },
-  {
-    id: 'github-profile-badges',
-    name: 'GitHub Profile - Badges',
-    content: `## GitHub Stats\n\n![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yourusername)`
+    content: `## Feedback
+
+If you have any feedback, please reach out to us at fake@fake.com`
   },
   {
     id: 'github-profile-introduction',
     name: 'GitHub Profile - Introduction',
-    content: `## Hi, I'm Dev 👋\n\nA passionate Full Stack Developer from India.`
+    content: `# Hi, I'm Katherine! 👋`
   },
   {
     id: 'github-profile-links',
     name: 'GitHub Profile - Links',
-    content: `## Links\n\n- Portfolio: [myportfolio.com](https://myportfolio.com)`
+    content: `## 🔗 Links
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)`
   },
   {
     id: 'github-profile-others',
     name: 'GitHub Profile - Others',
-    content: `## Fun Facts\n\n- 🎮 I love gaming\n- 🏋️ I lift weights`
-  },
-  {
-    id: 'github-profile-skills',
-    name: 'GitHub Profile - Skills',
-    content: `## Skills\n\n- JavaScript\n- React\n- Node.js`
-  },
-  {
-    id: 'github-profile-summary',
-    name: 'GitHub Profile - Summary',
-    content: `## Summary\n\n🔭 I'm currently working on amazing open-source projects.\n🌱 I'm learning advanced backend engineering.`
-  },
-  {
-    id: 'installation',
-    name: 'Installation',
-    content: `## Installation\n\nInstall my-project with npm:\n\`\`\`bash\nnpm install my-project\n\`\`\``
-  },
-  {
-    id: 'lessons',
-    name: 'Lessons Learned',
-    content: `## Lessons Learned\n\n- Importance of clean architecture\n- How to handle edge cases`
+    content: `## Other Common Github Profile Sections`
   },
   {
     id: 'license',
     name: 'License',
-    content: `## License\n\nDistributed under the MIT License.`
+    content: `## License
+
+[MIT](https://choosealicense.com/licenses/mit/)`
+  },
+  {
+    id: 'lessons',
+    name: 'Lessons Learned',
+    content: `## Lessons Learned
+
+What did you learn while building this project? What challenges did you face and how did you overcome them?`
   },
   {
     id: 'logo',
     name: 'Logo',
-    content: `## Logo\n\n![Logo](https://via.placeholder.com/150)`
+    content: `## Logo
+
+Insert project logo or image here`
   },
   {
     id: 'optimizations',
     name: 'Optimizations',
-    content: `## Optimizations\n\n- Reduced API calls\n- Lazy loading images`
+    content: `## Optimizations
+
+What optimizations did you make in your code? E.g., refactors, performance improvements, accessibility`
   },
   {
     id: 'related-projects',
-    name: 'Related Projects',
-    content: `## Related Projects\n\n- [Cool Project](https://github.com/yourname/cool-project)`
+    name: 'Related',
+    content: `## Related
+
+Here are some related projects
+
+[Awesome README](https://github.com/matiassingers/awesome-readme)`
   },
   {
     id: 'roadmap',
     name: 'Roadmap',
-    content: `## Roadmap\n\n- [x] MVP\n- [ ] Add unit tests\n- [ ] Add dark mode`
+    content: `## Roadmap
+
+- Additional browser support
+- Add more integrations`
   },
   {
     id: 'run-locally',
     name: 'Run Locally',
-    content: `## Run Locally\n\nClone and run:\n\`\`\`bash\ngit clone https://github.com/user/project.git\ncd project\nnpm start\n\`\`\``
-  },
-  {
-    id: 'running-tests',
-    name: 'Running Tests',
-    content: `## Running Tests\n\nRun tests with:\n\`\`\`bash\nnpm test\n\`\`\``
+    content: `## Run Locally
+
+Clone the project:
+
+\`\`\`bash
+  git clone https://link-to-project
+\`\`\`
+
+Go to the project directory:
+
+\`\`\`bash
+  cd my-project
+\`\`\`
+
+Install dependencies:
+
+\`\`\`bash
+  npm install
+\`\`\`
+
+Start the server:
+
+\`\`\`bash
+  npm run start
+\`\`\``
   },
   {
     id: 'screenshots',
     name: 'Screenshots',
-    content: `## Screenshots\n\n![Screenshot](https://via.placeholder.com/600x400)`
+    content: `## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)`
   },
   {
     id: 'support',
     name: 'Support',
-    content: `## Support\n\nContact [support@example.com](mailto:support@example.com)`
+    content: `## Support
+
+For support, email fake@fake.com or join our Slack channel.`
   },
   {
     id: 'tech',
     name: 'Tech Stack',
-    content: `## Tech Stack\n\n**Client:** React\n**Server:** Node\n**Database:** MongoDB`
+    content: `## Tech Stack
+
+**Client:** React, Redux, TailwindCSS  
+**Server:** Node, Express`
+  },
+  {
+    id: 'running-tests',
+    name: 'Running Tests',
+    content: `## Running Tests
+
+To run tests, run the following command:
+
+\`\`\`bash
+  npm run test
+\`\`\``
   },
   {
     id: 'usage-examples',
     name: 'Usage / Examples',
-    content: `## Usage/Examples\n\n\`\`\`js\nimport { MyLib } from 'my-lib'\nMyLib.doSomething()\n\`\`\``
+    content: `## Usage / Examples
+
+\`\`\`javascript
+import Component from 'my-project';
+
+function App() {
+  return <Component />;
+}
+\`\`\``
   },
   {
     id: 'used-by',
     name: 'Used By',
-    content: `## Used By\n\n- Project A\n- Company B`
+    content: `## Used By
+
+This project is used by the following companies:
+
+- Company 1
+- Company 2`
   }
 ];
