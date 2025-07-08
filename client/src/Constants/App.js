@@ -70,6 +70,11 @@ export const sections = [
     content: `## Feedback\n\nSend feedback to [email@example.com](mailto:email@example.com)`
   },
   {
+    id: 'github-profile-badges',
+    name: 'GitHub Profile - Badges',
+    content: `## GitHub Stats\n\n![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yourusername)`
+  },
+  {
     id: 'github-profile-introduction',
     name: 'GitHub Profile - Introduction',
     content: `## Hi, I'm Dev 👋\n\nA passionate Full Stack Developer from India.`
@@ -90,9 +95,9 @@ export const sections = [
     content: `## Skills\n\n- JavaScript\n- React\n- Node.js`
   },
   {
-    id: 'github-profile-badges',
-    name: 'GitHub Profile - Badges',
-    content: `## GitHub Stats\n\n![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yourusername)`
+    id: 'github-profile-summary',
+    name: 'GitHub Profile - Summary',
+    content: `## Summary\n\n🔭 I'm currently working on amazing open-source projects.\n🌱 I'm learning advanced backend engineering.`
   },
   {
     id: 'installation',
@@ -120,19 +125,24 @@ export const sections = [
     content: `## Optimizations\n\n- Reduced API calls\n- Lazy loading images`
   },
   {
-    id: 'roadmap',
-    name: 'Roadmap',
-    content: `## Roadmap\n\n- [x] MVP\n- [ ] Add unit tests\n- [ ] Add dark mode`
-  },
-  {
     id: 'related-projects',
     name: 'Related Projects',
     content: `## Related Projects\n\n- [Cool Project](https://github.com/yourname/cool-project)`
   },
   {
+    id: 'roadmap',
+    name: 'Roadmap',
+    content: `## Roadmap\n\n- [x] MVP\n- [ ] Add unit tests\n- [ ] Add dark mode`
+  },
+  {
     id: 'run-locally',
     name: 'Run Locally',
     content: `## Run Locally\n\nClone and run:\n\`\`\`bash\ngit clone https://github.com/user/project.git\ncd project\nnpm start\n\`\`\``
+  },
+  {
+    id: 'running-tests',
+    name: 'Running Tests',
+    content: `## Running Tests\n\nRun tests with:\n\`\`\`bash\nnpm test\n\`\`\``
   },
   {
     id: 'screenshots',
@@ -150,11 +160,6 @@ export const sections = [
     content: `## Tech Stack\n\n**Client:** React\n**Server:** Node\n**Database:** MongoDB`
   },
   {
-    id: 'running-tests',
-    name: 'Running Tests',
-    content: `## Running Tests\n\nRun tests with:\n\`\`\`bash\nnpm test\n\`\`\``
-  },
-  {
     id: 'usage-examples',
     name: 'Usage / Examples',
     content: `## Usage/Examples\n\n\`\`\`js\nimport { MyLib } from 'my-lib'\nMyLib.doSomething()\n\`\`\``
@@ -163,10 +168,5 @@ export const sections = [
     id: 'used-by',
     name: 'Used By',
     content: `## Used By\n\n- Project A\n- Company B`
-  },
-  {
-    id: 'github-profile-summary',
-    name: 'GitHub Profile - Summary',
-    content: `## Summary\n\n🔭 I'm currently working on amazing open-source projects.\n🌱 I'm learning advanced backend engineering.`
   }
 ];
