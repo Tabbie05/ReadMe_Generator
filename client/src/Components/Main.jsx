@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
 import Sidebar from './SidebarPanel/Sidebar'
 import EditorPanel from './EditorPanel'
-import { ButtonProvider } from './ButtonContext'
-
+import { ButtonProvider } from './ContextApi/ButtonContext'
 
 function Main() {
   return (
     <div className='flex  h-screen w-screen gap-2'>
-       <ButtonProvider>
+      <ButtonProvider>
         <Sidebar />
         <EditorPanel />
-       </ButtonProvider>
-        
+      </ButtonProvider>
+
     </div>
   )
 }

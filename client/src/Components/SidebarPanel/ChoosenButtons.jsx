@@ -4,15 +4,15 @@ import AllButtons from './AllButtons';
 import { TfiReload } from 'react-icons/tfi';
 import { PiCirclesFourThin } from 'react-icons/pi';
 import { MdDelete } from 'react-icons/md';
-import { useButtonContext } from '../ButtonContext';
+import { useButtonContext } from '../ContextApi/ButtonContext';
+
 
 function ChoosenButtons() {
   const [buttonsFromChild, setButtonsFromChild] = useState([]);
-  const { setSelectedButton } = useButtonContext(); // ✅ correct case
-
+  const { setSelectedButton } = useButtonContext();
   const handleChildButton = (bttnObj) => {
     setButtonsFromChild((prev) => [...prev, bttnObj]);
-    setSelectedButton(bttnObj); // ✅ updates Editor
+    setSelectedButton(bttnObj);
   };
 
   const handleFromChoosen = (btnObj) => {
