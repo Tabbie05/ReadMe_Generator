@@ -9,11 +9,6 @@ function PreviewPanel({ value }) {
   return (
     <div>
       <section className="relative overflow-y-scroll bg-white p-4 border h-[448px] w-[440px] mr-2 rounded-lg">
-        
-        {/* ✅ Copy button stays outside .markdown scope */}
-        <CopyButton textToCopy={value} className="absolute top-2 right-2 z-10" />
-        
-        {/* ✅ Only this part gets markdown styles */}
         <div className="pt-1 markdown">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}

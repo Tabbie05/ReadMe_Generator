@@ -3,11 +3,10 @@ import { TfiReload } from 'react-icons/tfi';
 import { PiCirclesFourThin } from 'react-icons/pi';
 import { MdDelete } from 'react-icons/md';
 import ChoosenButtons from './ChoosenButtons';
-
 import '../../index.css'
 function Sidebar() {
   return (
-    <section className="h-[calc(100vh-8rem)] w-85 overflow-y-auto overflow-x-hidden mt-3 bg-white ">
+    <section className="h-[calc(100vh-6.5rem)] w-85 overflow-y-auto overflow-x-hidden mt-3 bg-white ">
 
       <div className="fixed gap-39 bg-white flex justify-between text-sm text-blue-600 px-4">
         <div className='font-bold text-[18px]'>Sections</div>

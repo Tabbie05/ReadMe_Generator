@@ -18,7 +18,7 @@ function CopyButton({ textToCopy, className = "" }) {
   return (
     <button
       onClick={handleCopy}
-      className={`flex items-center gap-1 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-600 text-sm transition-all duration-300 ease-in-out ${className}`}
+      className={`flex items-center gap-1 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-400 text-sm transition-all duration-300 ease-in-out ${className}`}
     >
       {copied ? (
         <>
