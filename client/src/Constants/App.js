@@ -55,7 +55,7 @@ Any additional information goes here.`
     name: 'Authors',
     content: `## Authors
 
-- [@octokatherine](https://github.com/Tabbie05)`
+- [@Taybaah shaikh](https://github.com/Tabbie05)`
   },
   {
     id: 'badges',

@@ -2,23 +2,24 @@ import Editor from "@monaco-editor/react";
 import { useRef, useState, useEffect } from "react";
 import PreviewPanel from "./PreviewPanel";
 import RawPanel from "./RawPanel";
-import { useButtonContext } from "./ContextApi/ButtonContext";
+import { useButtonStore } from "./store/useButtonStore";
 
 function EditorPanel() {
   const editorRef = useRef(null);
-  const { selectedButton } = useButtonContext();
+  const { selectedButton, readmeContent, updateReadmeContent } = useButtonStore();
 
   const [value, setValue] = useState("");
-  const [panelrender, setPanelRender] = useState("preview"); // default to preview
+  const [panelrender, setPanelRender] = useState("preview");
 
+  // 🎯 Update editor when README content changes
   useEffect(() => {
-    if (selectedButton) {
-      setValue(selectedButton.content);
-    }
-  }, [selectedButton]);
+    setValue(readmeContent);
+  }, [readmeContent]);
 
+  // 🎯 Handle editor changes and update store
   const handleOnChange = (newValue) => {
     setValue(newValue);
+    updateReadmeContent(newValue); // Update store with manual changes
   };
 
   const handleEditorDidMount = (editor) => {
@@ -31,7 +32,14 @@ function EditorPanel() {
       {/* Left Panel - Editor */}
       <section>
         <div>
-          <div className="text-blue-600 text-[18px] font-bold mb-1 mt-3">Editor</div>
+          <div className="text-blue-600 text-[18px] font-bold mb-1 mt-3">
+            Editor
+            {selectedButton && (
+              <span className="text-sm text-gray-500 ml-2">
+                (Last added: {selectedButton.name})
+              </span>
+            )}
+          </div>
           <Editor
             onMount={handleEditorDidMount}
             onChange={handleOnChange}

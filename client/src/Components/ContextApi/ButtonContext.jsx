@@ -1,15 +1,16 @@
-
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
+import { useButtonStore } from "../store/useButtonStore";
 
 const ButtonContext = createContext();
 
-export const useButtonContext = () => useContext(ButtonContext);
+export const useButtonContext = () => {
+  const store = useButtonStore();
+  return store;
+};
 
 export const ButtonProvider = ({ children }) => {
-  const [selectedButton, setSelectedButton] = useState(null);
-
   return (
-    <ButtonContext.Provider value={{ selectedButton, setSelectedButton }}>
+    <ButtonContext.Provider value={{}}>
       {children}
     </ButtonContext.Provider>
   );

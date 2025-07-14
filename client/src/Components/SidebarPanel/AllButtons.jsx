@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
+// AllButtons.jsx
+import React, { useEffect } from 'react';
 import { PiCirclesFourThin } from 'react-icons/pi';
 import { sections } from '../../Constants/App';
+import { useButtonStore } from '../store/useButtonStore';
 
-function AllButtons({ onSendButton }) {
+function AllButtons() {
+  const { availableButtons, addSelectedButton, initializeButtons } = useButtonStore();
 
-  const [btnsend, setbtnsend] = useState(sections);
+  useEffect(() => {
+    initializeButtons(sections);
+  }, [initializeButtons]);
 
   const handleSendButton = (btnObj) => {
-    onSendButton(btnObj);
-    setbtnsend((prev) => prev.filter((btn) => btn.id !== btnObj.id));
+    addSelectedButton(btnObj);
   };
 
   return (
     <div>
-      {btnsend.map((items) => (
+      {availableButtons.map((items) => (
         <button
           key={items.id}
           onClick={() => handleSendButton(items)}
@@ -23,7 +27,7 @@ function AllButtons({ onSendButton }) {
             <PiCirclesFourThin size={20} className="mr-2" />
             {items.name}
           </div>
-          <div className="flex items-center gap-2 text-gray-600 ">
+          <div className="flex items-center gap-2 text-gray-600">
           </div>
         </button>
       ))}
