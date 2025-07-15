@@ -4,8 +4,13 @@ import { PiCirclesFourThin } from 'react-icons/pi';
 import { sections } from '../../Constants/App';
 import { useButtonStore } from '../store/useButtonStore';
 
-function AllButtons() {
+function AllButtons({ searchQuery }) {
   const { availableButtons, addSelectedButton, initializeButtons } = useButtonStore();
+
+  const filteredButtons = availableButtons.filter((button) =>
+    button.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
 
   useEffect(() => {
     initializeButtons(sections);
@@ -17,7 +22,7 @@ function AllButtons() {
 
   return (
     <div>
-      {availableButtons.map((items) => (
+      {filteredButtons.map((items) => (
         <button
           key={items.id}
           onClick={() => handleSendButton(items)}
@@ -31,6 +36,10 @@ function AllButtons() {
           </div>
         </button>
       ))}
+      {filteredButtons.length === 0 && (
+        <p className="ml-5 mt-2 text-sm text-gray-500">No matching sections found.</p>
+      )}
+
     </div>
   );
 }

@@ -8,6 +8,7 @@ export const useButtonStore = create(
       availableButtons: [],
       selectedButton: null,
       readmeContent: '',
+      customSections: [],
       
       // Initialize with title and description
       initializeButtons: (sections) => {
@@ -44,6 +45,19 @@ export const useButtonStore = create(
         });
       },
       
+      // 🎯 Add custom section
+      addCustomSection: (customSection) => {
+        set((state) => {
+          const newContent = state.readmeContent + '\n\n' + customSection.content;
+          return {
+            selectedButtons: [...state.selectedButtons, customSection],
+            customSections: [...state.customSections, customSection],
+            selectedButton: customSection, // Auto-select the new custom section
+            readmeContent: newContent.trim()
+          };
+        });
+      },
+      
       removeSelectedButton: (buttonId, originalSections) => {
         set((state) => {
           // Don't allow removing title and description
@@ -52,8 +66,18 @@ export const useButtonStore = create(
           const buttonToRemove = state.selectedButtons.find(btn => btn.id === buttonId);
           if (!buttonToRemove) return state;
           
-          const originalButton = originalSections.find(section => section.id === buttonId);
           const newSelectedButtons = state.selectedButtons.filter(btn => btn.id !== buttonId);
+          
+          // If it's a custom section, remove it from customSections as well
+          const newCustomSections = buttonToRemove.isCustom 
+            ? state.customSections.filter(section => section.id !== buttonId)
+            : state.customSections;
+          
+          // If it's a regular section, add it back to available buttons
+          const originalButton = originalSections.find(section => section.id === buttonId);
+          const newAvailableButtons = originalButton && !buttonToRemove.isCustom
+            ? [...state.availableButtons, originalButton]
+            : state.availableButtons;
           
           const newContent = newSelectedButtons
             .map(btn => btn.content)
@@ -61,7 +85,8 @@ export const useButtonStore = create(
           
           return {
             selectedButtons: newSelectedButtons,
-            availableButtons: [...state.availableButtons, originalButton],
+            availableButtons: newAvailableButtons,
+            customSections: newCustomSections,
             selectedButton: state.selectedButton?.id === buttonId ? null : state.selectedButton,
             readmeContent: newContent
           };
@@ -72,11 +97,48 @@ export const useButtonStore = create(
         set({ selectedButton: button });
       },
       
+      // 🎯 Update README content and sync with selected buttons
       updateReadmeContent: (newContent) => {
-        set({ readmeContent: newContent });
+        set((state) => {
+          // Update the content of the currently selected button if it exists
+          if (state.selectedButton) {
+            const updatedSelectedButtons = state.selectedButtons.map(btn => {
+              if (btn.id === state.selectedButton.id) {
+                // Extract the section content from the full README
+                const sections = newContent.split('\n\n');
+                const currentIndex = state.selectedButtons.findIndex(b => b.id === btn.id);
+                const sectionContent = sections[currentIndex] || btn.content;
+                
+                return { ...btn, content: sectionContent };
+              }
+              return btn;
+            });
+            
+            // Update custom sections if the selected button is custom
+            const updatedCustomSections = state.selectedButton.isCustom
+              ? state.customSections.map(section => {
+                  if (section.id === state.selectedButton.id) {
+                    const sections = newContent.split('\n\n');
+                    const currentIndex = state.selectedButtons.findIndex(b => b.id === section.id);
+                    const sectionContent = sections[currentIndex] || section.content;
+                    return { ...section, content: sectionContent };
+                  }
+                  return section;
+                })
+              : state.customSections;
+            
+            return {
+              selectedButtons: updatedSelectedButtons,
+              customSections: updatedCustomSections,
+              readmeContent: newContent
+            };
+          }
+          
+          return { readmeContent: newContent };
+        });
       },
       
-      // 🎯 NEW: Reorder sections
+      // 🎯 Reorder sections
       reorderSections: (newOrder) => {
         set((state) => {
           const newContent = newOrder
@@ -90,6 +152,30 @@ export const useButtonStore = create(
         });
       },
       
+      // 🎯 Update specific section content
+      updateSectionContent: (sectionId, newContent) => {
+        set((state) => {
+          const updatedSelectedButtons = state.selectedButtons.map(btn => 
+            btn.id === sectionId ? { ...btn, content: newContent } : btn
+          );
+          
+          const updatedCustomSections = state.customSections.map(section => 
+            section.id === sectionId ? { ...section, content: newContent } : section
+          );
+          
+          const fullReadmeContent = updatedSelectedButtons
+            .map(btn => btn.content)
+            .join('\n\n');
+          
+          return {
+            selectedButtons: updatedSelectedButtons,
+            customSections: updatedCustomSections,
+            readmeContent: fullReadmeContent
+          };
+        });
+      },
+      
+      // 🎯 Reset everything
       resetButtons: (originalSections) => {
         const titleSection = {
           id: 'title-description',
@@ -100,6 +186,7 @@ export const useButtonStore = create(
         set({
           selectedButtons: [titleSection],
           availableButtons: originalSections,
+          customSections: [],
           selectedButton: null,
           readmeContent: titleSection.content
         });
@@ -110,7 +197,8 @@ export const useButtonStore = create(
       partialize: (state) => ({
         selectedButtons: state.selectedButtons,
         selectedButton: state.selectedButton,
-        readmeContent: state.readmeContent
+        readmeContent: state.readmeContent,
+        customSections: state.customSections
       })
     }
   )

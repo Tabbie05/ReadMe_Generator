@@ -5,14 +5,14 @@ import { MdDelete } from 'react-icons/md';
 import ChoosenButtons from './ChoosenButtons';
 import '../../index.css'
 import { useButtonStore } from '../store/useButtonStore';
-import { sections } from '../../Constants/App'; // 🎯 FIXED: Import sections
+import { sections } from '../../Constants/App';
 
 function Sidebar() {
   const { resetButtons } = useButtonStore();
   
   const handleResetAll = () => {
     if (confirm('Are you sure you want to reset all sections?')) {
-      resetButtons(sections); // 🎯 FIXED: Now sections is imported
+      resetButtons(sections);
     }
   };
 
@@ -29,7 +29,7 @@ function Sidebar() {
         </div>
       </div>
 
-      <p className="text-[13px] text-gray-600 ml-4 mt-6">
+      <p className="text-[13px] text-gray-600 ml-4 mt-9">
         Click on a section below to edit the contents
       </p>
 
