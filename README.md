@@ -42,15 +42,11 @@ npm install
 
 # 4. Start the development server
 npm start
-
 ### Main Editor UI
-![README1](https://github.com/user-attachments/assets/a350cdf7-84cf-498a-b635-02dd097c47b8)
-
-
+![README1](./screenshots/README1.png)
 
 ### Markdown Preview & Custom section
-![README2](https://github.com/user-attachments/assets/81aeb32e-f1c0-459f-a1b0-20b7a27d5e1f)
+![README2](./screenshots/README2.png)
 
-
-### Download ReadME , Drag and change Contents ,Raw Code
-![README3](https://github.com/user-attachments/assets/31473b6e-1ba5-447e-a95c-e666f96a2402)
+### Download ReadME, Drag and change Contents, Raw Code
+![README3](./screenshots/README3.png)
